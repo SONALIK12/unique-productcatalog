@@ -28,9 +28,23 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  
- 
-      
-    
+  // Handle editing a product
+  editProduct() {
+    if (this.product && this.product._id) {
+      this.router.navigate(['/edit', this.product._id]);
+    }
   }
 
+  // Handle deleting a product
+  deleteProduct() {
+    if (this.product && this.product._id) {
+      const confirmDelete = window.confirm(`Are you sure you want to delete ${this.product.name}?`);
+      if (confirmDelete) {
+        this.productService.deleteProduct(this.product._id).subscribe(() => {
+          // Product deleted, navigate back to the product list.
+          this.router.navigate(['/']);
+        });
+      }
+    }
+  }
+}
