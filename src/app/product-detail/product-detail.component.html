@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="mb-3">Product Detail</h2>
+    <div *ngIf="product" class="row">
+        <div class="col-md-4">
+            <img [src]="product.image" alt="{{ product.name }}" class="img-fluid" />
+        </div>
+        <div class="col-md-8">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>{{ product.sku }}</p>
+            <p>Price: Rs.{{ product.price }}</p>
+            <!-- Display product tags if available -->
+            <p *ngIf="product.tags.length > 0">Tags: {{ product.tags.join(', ') }}</p>
+          
+         
+        </div>
+    </div>
+</div>

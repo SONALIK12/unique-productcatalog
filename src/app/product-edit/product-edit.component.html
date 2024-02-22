@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Edit Product</h2>
+    <form (ngSubmit)="updateProduct()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control"
+                [(ngModel)]="product.description"></textarea>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image" class="form-control" [(ngModel)]="product.image" required />
+        </div>
+
+        <div class="form-group">
+            <label for="tags">Tags (comma-separated):</label>
+            <input type="text" id="tags" name="tags" class="form-control" [(ngModel)]="product.tags" />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" class="form-control" [(ngModel)]="product.price" required />
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Stock:</label>
+            <input type="number" id="stock" name="stock" class="form-control" [(ngModel)]="product.stock" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update </button>
+    </form>
+</div>
