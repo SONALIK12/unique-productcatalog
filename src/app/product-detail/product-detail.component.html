@@ -8,11 +8,11 @@
             <h3>{{ product.name }}</h3>
             <p>{{ product.description }}</p>
             <p>{{ product.sku }}</p>
-            <p>Price: Rs.{{ product.price }}</p>
+            <p>Price: ${{ product.price }}</p>
             <!-- Display product tags if available -->
             <p *ngIf="product.tags.length > 0">Tags: {{ product.tags.join(', ') }}</p>
-          
-         
+            <button (click)="editProduct()" class="btn btn-primary">Edit</button>
+            <button (click)="deleteProduct()" class="btn btn-danger">Delete</button>
         </div>
     </div>
 </div>
