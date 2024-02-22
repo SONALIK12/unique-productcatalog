@@ -12,7 +12,10 @@
                 [(ngModel)]="product.description"></textarea>
         </div>
 
-        
+        <div class="form-group">
+            <label for="sku">SKU:</label>
+            <input type="text" id="sku" name="sku" class="form-control" [(ngModel)]="product.sku" required />
+        </div>
 
         <div class="form-group">
             <label for="image">Image URL:</label>
@@ -34,6 +37,6 @@
             <input type="number" id="stock" name="stock" class="form-control" [(ngModel)]="product.stock" required />
         </div>
 
-        <button type="submit" class="btn btn-primary">Update </button>
+        <button type="submit" class="btn btn-primary">Update Product</button>
     </form>
 </div>
